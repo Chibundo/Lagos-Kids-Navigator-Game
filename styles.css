@@ -1,0 +1,103 @@
+:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#132f40;background:#edf5f5;font-synthesis:none}
+*{box-sizing:border-box}
+body{margin:0}
+button,select{font:inherit}
+button{cursor:pointer}
+button:disabled{opacity:.46;cursor:not-allowed}
+button:focus-visible,select:focus-visible{outline:3px solid #ffcb3d;outline-offset:2px}
+.app{height:100dvh;display:flex;flex-direction:column;overflow:hidden}
+.topbar{height:77px;min-height:77px;padding:12px 25px;background:white;display:flex;align-items:center;justify-content:space-between;gap:16px;box-shadow:0 2px 15px #113a5012;z-index:5}
+.brand{display:flex;align-items:center;gap:10px;white-space:nowrap}
+.brand-icon{height:45px;width:45px;border-radius:50%;background:#ffce3c;display:grid;place-items:center;font-size:28px;box-shadow:inset 0 -4px 0 #e5b526}
+.brand strong{display:block;color:#112f61;font-size:16px;letter-spacing:.03em}
+.brand small{display:block;color:#67808a;font-size:12px;margin-top:1px}
+.view-switch{background:#f3f7f8;padding:4px;border-radius:28px;display:flex;gap:3px;border:1px solid #dfe9eb}
+.view-button{border:0;background:transparent;border-radius:24px;padding:10px 19px;color:#3b5970;font-weight:750}
+.view-button.selected{background:#128c5d;color:#fff;box-shadow:0 3px 9px #087a4b2b}
+.top-actions{display:flex;align-items:center;gap:16px}
+.stars{background:#fff7d5;border-radius:20px;padding:8px 13px;color:#694a09;font-weight:800}
+.circle-button{border:1px solid #d5e2e5;border-radius:50%;background:white;width:37px;height:37px;font-weight:900;color:#406174}
+.playfield{flex:1;position:relative;overflow:hidden;background:#dbe9eb}
+.map{position:absolute;inset:0}
+.map-failure{position:absolute;inset:25% 20%;z-index:4;background:white;padding:25px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;border-radius:16px;text-align:center}
+.map-failure[hidden]{display:none}
+.journey-panel{position:absolute;z-index:3;top:18px;left:20px;width:min(350px,calc(100% - 40px));background:#fffffff5;box-shadow:0 13px 40px #113e5352;border:1px solid #ecf0f0;border-radius:20px;padding:22px;backdrop-filter:blur(9px);max-height:calc(100% - 160px);overflow-y:auto}
+.panel-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.eyebrow{font-size:10px;font-weight:900;letter-spacing:.13em;color:#107d57}
+.pilot-chip{font-size:10px;border-radius:20px;background:#fff2c5;color:#765300;padding:5px 9px;font-weight:800}
+.journey-panel h1{font-size:25px;letter-spacing:-.04em;margin:13px 0 5px;color:#102b5b}
+.journey-panel p{color:#5c7580;font-size:12px;line-height:1.45;margin:0 0 13px}
+.journey-panel label{font-size:11px;font-weight:800;color:#365468;display:block;margin:11px 0 5px}
+.journey-panel select{height:42px;width:100%;border:1px solid #d6e3e7;border-radius:9px;color:#163c50;background:white;padding:0 10px;outline-offset:3px}
+.mode-selector{display:grid;grid-template-columns:1fr 1fr 1.35fr;gap:6px;margin:14px 0}
+.travel{background:#f6f9fa;border:1px solid #dfe9eb;border-radius:10px;padding:9px 4px;font-size:11px;font-weight:800;color:#385666;display:flex;flex-direction:column;align-items:center;gap:4px}
+.travel span{font-size:22px}
+.travel.selected{border:2px solid #149d69;background:#ecfbf3;color:#047e52}
+.primary-button{width:100%;height:44px;border:0;border-radius:10px;background:#118b58;color:white;font-weight:900;box-shadow:0 5px 12px #118b5830}
+.primary-button:hover:not(:disabled){background:#077b49}
+.secondary-button{width:100%;height:38px;border:1px solid #119160;border-radius:10px;background:white;color:#127449;font-weight:800;margin-top:7px}
+.journey-summary{background:#f5f9fa;border-radius:12px;padding:12px;margin-top:14px}
+.summary-line{display:flex;justify-content:space-between;gap:10px;color:#637e8b;font-size:11px;margin-bottom:7px}
+.summary-line strong{color:#24445b}
+.progress-track{height:8px;border-radius:99px;background:#dce8e9;overflow:hidden}
+.progress-track>div{width:0;height:100%;background:#1cbd7b;transition:width .2s}
+.lesson{display:flex;gap:10px;margin-top:13px;align-items:center}
+.lesson-icon{font-size:21px;width:36px;height:36px;border-radius:50%;background:#fff1c8;display:grid;place-items:center}
+.lesson strong,.lesson small{display:block}
+.lesson strong{font-size:12px;color:#143753}
+.lesson small{font-size:11px;line-height:1.4;color:#5e7684;margin-top:3px}
+.map-tools{position:absolute;right:20px;top:18px;z-index:2;display:flex;align-items:center;gap:7px}
+.map-tools button{border:1px solid #d2e2e6;background:#ffffffef;color:#274659;border-radius:12px;box-shadow:0 5px 20px #21475d20;height:40px;padding:0 13px;font-weight:800}
+.learning-note{position:absolute;bottom:133px;right:18px;z-index:2;border-radius:10px;background:#ffffffdf;padding:7px 10px;font-size:10px;color:#4b6874}
+.driving-hud{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:10px 22px 16px;pointer-events:none;background:linear-gradient(0deg,#0a294b8f,transparent)}
+.driving-hud button{pointer-events:auto}
+.game-status{display:flex;justify-content:flex-end;align-items:center;gap:15px;color:#fff;text-shadow:0 1px 3px #132c40}
+.street-name{padding:8px 12px;background:#123a54be;border-radius:12px;font-size:13px;font-weight:750}
+.speed{background:#1d3549cc;border:1px solid #c1dde85c;padding:8px 14px;border-radius:14px;min-width:89px;text-align:center}
+.speed strong{font-size:27px}.speed span{font-size:11px;display:block;margin-top:-4px}
+.control-row{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-top:9px}
+.mode-toggle{display:flex;gap:3px;border-radius:20px;padding:4px;background:#ffffffec;box-shadow:0 6px 18px #173e5040}
+.mode-toggle button{border:0;background:transparent;color:#3d6373;font-size:12px;font-weight:800;padding:10px 12px;border-radius:16px;white-space:nowrap}
+.mode-toggle button.selected{background:#149b65;color:white}
+.drive-buttons{display:flex;gap:9px;align-items:center}
+.drive-key{height:58px;width:58px;border-radius:19px;border:2px solid #ffffff9b;background:#193950c9;color:white;font-size:26px;font-weight:900;box-shadow:0 7px 14px #102e487a;touch-action:none;user-select:none;-webkit-user-select:none}
+.drive-key.pressed{transform:scale(.96);background:#0e6b76}
+.drive-key.accelerate{background:#11a865;border-color:#b9f7cb}
+.control-hint{margin:5px 0 0;text-align:right;color:#fff;font-size:10px;text-shadow:0 1px 2px #102c49}
+.vehicle{border:3px solid #fff;border-radius:50%;box-shadow:0 3px 12px #102e5080;background:#ffce37;width:42px;height:42px;display:grid;place-items:center;font-size:25px;transform-origin:center}
+.place-pin{font-size:21px;display:grid;place-items:center;width:30px;height:30px;background:white;border:2px solid #fff;border-radius:50%;box-shadow:0 3px 10px #1a4e6366}
+.place-pin.bus-stop{font-size:17px;background:#e3efff}
+dialog{border:0;border-radius:18px;padding:25px;max-width:420px;box-shadow:0 24px 70px #0e314a77}
+dialog::backdrop{background:#082a4b97}
+dialog h2{margin:0;color:#143660}dialog p{font-size:14px;color:#4a6976;line-height:1.55}
+@media(max-width:850px){
+  .topbar{padding:9px 12px;height:63px;min-height:63px}
+  .brand-icon{width:35px;height:35px;font-size:22px}
+  .brand strong{font-size:11px}.brand small{font-size:10px}
+  .view-button{padding:8px 10px;font-size:11px}
+  .top-actions{gap:5px}.stars{font-size:11px;padding:7px}.circle-button{width:30px;height:30px}
+  .journey-panel{top:auto;bottom:0;left:0;width:100%;border-radius:18px 18px 0 0;padding:12px 15px;max-height:42%;transition:transform .2s}
+  .journey-panel h1{font-size:19px;margin:7px 0 3px}.journey-panel p{display:none}
+  .journey-panel label{margin:5px 0 3px}.journey-panel select{height:36px}
+  .journey-panel .mode-selector{margin:8px 0}.travel{flex-direction:row;justify-content:center;padding:5px;font-size:10px}.travel span{font-size:16px}
+  .primary-button{height:37px}.secondary-button{height:32px}
+  .journey-summary,.lesson{display:none}
+  .map-tools{top:10px;right:10px}
+  .map-tools button{height:32px;padding:0 8px;font-size:12px}
+  .map-tools button span{display:none}
+  .driving-hud{bottom:40%;padding:8px 10px}
+  .game-status{gap:8px}.street-name{font-size:10px;padding:6px 9px}.speed{min-width:61px;padding:4px 9px}.speed strong{font-size:20px}
+  .control-row{gap:5px}.mode-toggle{display:grid;grid-template-columns:1fr;gap:0;border-radius:12px}.mode-toggle button{font-size:10px;padding:7px 9px}
+  .drive-buttons{gap:5px}.drive-key{width:45px;height:45px;font-size:19px;border-radius:13px}
+  .control-hint{display:none}
+  .learning-note{display:none}
+}
+@media(max-width:410px){
+  .brand small{display:none}
+  .brand strong{max-width:105px;white-space:normal;line-height:1.1}
+  .stars{display:none}
+  .view-button{font-size:10px;padding:7px}
+  .journey-panel{max-height:43%}
+  .mode-toggle button{font-size:9px}
+  .drive-key{width:40px;height:40px}
+}
